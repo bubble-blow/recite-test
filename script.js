@@ -101,7 +101,7 @@ function renderPassage() {
 
     if (state.hiddenSet.has(idx)) {
       span.classList.add('hidden-char');
-      span.textContent = '＿';
+      span.textContent = '　';
     } else {
       span.textContent = ch;
     }
