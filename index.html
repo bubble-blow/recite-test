@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>背书辅助工具</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>背书辅助工具</h1>
+
+    <section class="panel" id="setupPanel">
+      <label for="sourceText">粘贴课文文本（中文）</label>
+      <textarea id="sourceText" rows="8" placeholder="请在这里粘贴需要背诵的课文..."></textarea>
+
+      <div class="difficulty-row">
+        <label for="difficulty">初始难度（隐藏比例）</label>
+        <input id="difficulty" type="range" min="0.1" max="0.9" step="0.05" value="0.3" />
+        <span id="difficultyValue">30%</span>
+      </div>
+
+      <button id="startBtn">开始练习</button>
+      <p class="hint">规则：每轮按难度随机隐藏非标点文字，逐个填空。每题选项=随机7字+正确字（按拼音排序）。当本轮错误率 &lt; 0.05 时进入下一轮，直到 100% 全隐藏通关。</p>
+    </section>
+
+    <section class="panel hidden" id="gamePanel">
+      <div class="stats" id="stats"></div>
+      <div id="passage" class="passage"></div>
+
+      <div class="feedback" id="feedback">请选择高亮空格对应的文字</div>
+      <div id="options" class="options"></div>
+
+      <div class="controls">
+        <button id="restartBtn" class="secondary">重新开始</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
