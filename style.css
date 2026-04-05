@@ -112,7 +112,7 @@ button:hover { opacity: 0.92; }
 
 .active {
   background: var(--accent-soft);
-  color: #1e3a8a;
+  color: transparent;
   border-bottom-color: var(--accent);
   border-radius: 4px;
 }
